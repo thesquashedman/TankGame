@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckHealth();
     }
 
     float GetHealth()
@@ -23,13 +23,13 @@ public class Health : MonoBehaviour
         return health;
     }
 
-    void ChangeHealth(float change)
+    public void ChangeHealth(float change)
     {
         this.health += change;
 
     }
 
-    void CheckHealth()
+    public void CheckHealth()
     {
         if (health <= 0)
         {
