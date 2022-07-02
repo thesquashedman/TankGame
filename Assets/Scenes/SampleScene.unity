@@ -493,7 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   fuel: 100
-  fuelUsagePerSec: 0.01
+  fuelUsagePerSec: 1
   engineTemperature: 0
   coolingIndex: 0
 --- !u!1 &199108965

@@ -20,21 +20,21 @@ public class Engine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gass();
+        Gas();
     }
 
-    void Gass()
+    void Gas()
     {
-        if (Input.GetKey(KeyCode.Space)) //Input.GetKeyDown("space")
+        if (Input.GetKey(KeyCode.Space)) 
         {
             if (fuel > 0)
             { 
                 tankRB.AddForce(new Vector2(speed, 0));
-                fuel -= fuelUsagePerSec;
+                fuel -= fuelUsagePerSec * Time.deltaTime;
             }
         }
     }
-    void ChangeEnginPower(int change)
+    void ChangeEnginePower(int change)
     { 
     
     }
