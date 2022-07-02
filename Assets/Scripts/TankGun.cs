@@ -24,7 +24,7 @@ public class TankGun : MonoBehaviour
             if (cartridges > 0 && timePassed > reloadTime)
             {
                 curCatridge = Instantiate(gunCartridgePref, new Vector3(placeToSpawnCatridge.position.x, placeToSpawnCatridge.position.y, placeToSpawnCatridge.position.z), Quaternion.identity);
-                curCatridge.GetComponent<Rigidbody2D>().AddForce(new Vector2(catridgeSpeed, 0));
+                curCatridge.GetComponent<Rigidbody2D>().AddForce(this.transform.forward * catridgeSpeed);
                 cartridges--;
                 timePassed = 0;
             }
