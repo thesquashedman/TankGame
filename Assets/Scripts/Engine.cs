@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Engine : MonoBehaviour
 {
-    [SerializeField] int speed;
+    [SerializeField] int[] speed;
+    [SerializeField] float[] fuelUsagePerSec;
     [SerializeField] float fuel;
-    [SerializeField] float fuelUsagePerSec;
+    [SerializeField] int powerLevel = 0;
     [SerializeField] int engineTemperature;
     [SerializeField] float coolingIndex;
     Rigidbody2D tankRB;
@@ -18,9 +19,10 @@ public class Engine : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Gas();
+        ChangeEnginePower();
     }
 
     void Gas()
@@ -29,14 +31,24 @@ public class Engine : MonoBehaviour
         {
             if (fuel > 0)
             { 
-                tankRB.AddForce(new Vector2(speed, 0));
-                fuel -= fuelUsagePerSec * Time.deltaTime;
+                tankRB.AddForce(new Vector2(speed[powerLevel], 0));
+                fuel -= fuelUsagePerSec[powerLevel] * Time.deltaTime;
             }
         }
     }
-    void ChangeEnginePower(int change)
-    { 
-    
+    void ChangeEnginePower()
+    {
+        if (Input.GetKey("1"))
+        {
+            powerLevel = 0;
+        }
+        else if (Input.GetKey("2"))
+        {
+            powerLevel = 1;
+        }
+        else if (Input.GetKey("3"))
+        {
+            powerLevel = 2;
+        }
     }
-
 }

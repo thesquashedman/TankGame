@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 111732153}
   m_Layer: 0
   m_Name: PlayerTank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,9 +491,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665c4b020fb987a458625cf9451e0ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 0c0000001200000016000000
+  fuelUsagePerSec:
+  - 1
+  - 2
+  - 4
   fuel: 100
-  fuelUsagePerSec: 1
+  powerLevel: 1
   engineTemperature: 0
   coolingIndex: 0
 --- !u!1 &199108965
@@ -540,6 +544,7 @@ GameObject:
   - component: {fileID: 470298107}
   - component: {fileID: 470298106}
   - component: {fileID: 470298105}
+  - component: {fileID: 470298110}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Enemy
@@ -675,6 +680,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &470298110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470298103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cfd89dc46d6c745a6fd7d516e94173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistance: 0.5
+  velocityForDamage:
+  - 0.3
+  - 0.8
+  - 1.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

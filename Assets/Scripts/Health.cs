@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         CheckHealth();
     }
 
-    float GetHealth()
+    public float GetHealth()
     {
         return health;
     }
