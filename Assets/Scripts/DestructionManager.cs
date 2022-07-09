@@ -8,6 +8,8 @@ public class DestructionManager : MonoBehaviour
     Rigidbody2D rb;
     Transform transform;
 
+    Player player;
+
     [SerializeField] float resistance; // between 0 and 1
     [SerializeField] float[] velocityForDamage;
 
@@ -17,6 +19,8 @@ public class DestructionManager : MonoBehaviour
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
+
+        player = GameObject.Find("PlayerTank").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -31,20 +35,21 @@ public class DestructionManager : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //float velosity = rb.GetPointVelocity(transform.TransformPoint(curPos));
-            Debug.Log(rb.velocity.magnitude);
+            //Debug.Log(rb.velocity.magnitude);
 
-            if (rb.velocity.magnitude > velocityForDamage[2])
+            if (player.GetSpeed() > velocityForDamage[2])
             {
                 health.ChangeHealth(-health.GetHealth());
             }
-            else if (rb.velocity.magnitude > velocityForDamage[1])
+            else if (player.GetSpeed() > velocityForDamage[1])
             {
                 health.ChangeHealth(-(health.GetHealth() * resistance / 2));
             }
-            else if (rb.velocity.magnitude > velocityForDamage[0])
+            else if (player.GetSpeed() > velocityForDamage[0])
             {
                 health.ChangeHealth(-(health.GetHealth() * resistance));
             }
+            
         }
     }
 }
