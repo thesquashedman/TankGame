@@ -13,10 +13,7 @@ public class EnemyResources : MonoBehaviour
 
     Health health;
  
-    void Start() {
-        
-        
-    }
+    
     
     private void OnEnable() {
         health = this.transform.GetComponent<Health>();

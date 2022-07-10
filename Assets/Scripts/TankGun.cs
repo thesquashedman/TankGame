@@ -28,8 +28,9 @@ public class TankGun : MonoBehaviour
                 cartridges--;
                 timePassed = 0;
             }
-            timePassed += Time.deltaTime;
+            
         }
+        timePassed += Time.deltaTime;
     }
 
 
