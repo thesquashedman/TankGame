@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DestructionManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DestructionManager : MonoBehaviour
     Transform transform;
 
     Player player;
+
+    public static event Action EnemyDied;
 
     [SerializeField] float resistance; // between 0 and 1
     [SerializeField] float[] velocityForDamage;
@@ -21,6 +24,8 @@ public class DestructionManager : MonoBehaviour
         transform = GetComponent<Transform>();
 
         player = GameObject.Find("PlayerTank").GetComponent<Player>();
+
+        health.OnDeath += OnDying;
     }
 
     // Update is called once per frame
@@ -52,4 +57,14 @@ public class DestructionManager : MonoBehaviour
             
         }
     }
+    void OnDying()
+    {
+        if(EnemyDied != null)
+        {
+            EnemyDied.Invoke();
+        }
+        
+        
+    }
+
 }
