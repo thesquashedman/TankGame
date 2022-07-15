@@ -25,6 +25,18 @@ public class InteractionsWithTankManager : MonoBehaviour
         
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Vector2 newVect = (this.transform.position - player.transform.position).normalized;
+            //Debug.Log(rb.velocity.magnitude);
+            rb.AddForce(newVect * bouncingFromTank);
+            Debug.Log(rb.velocity.magnitude);
+        }
+    }
+
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -35,4 +47,5 @@ public class InteractionsWithTankManager : MonoBehaviour
             Debug.Log(rb.velocity.magnitude);
         }
     }
+    
 }

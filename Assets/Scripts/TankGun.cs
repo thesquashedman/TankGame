@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankGun : MonoBehaviour
 {
 
-    [SerializeField] int cartridges;
+    [SerializeField] public int cartridges;
     [SerializeField] Transform placeToSpawnCatridge;
     [SerializeField] float catridgeSpeed;
     [SerializeField] float reloadTime;

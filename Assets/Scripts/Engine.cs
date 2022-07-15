@@ -6,8 +6,8 @@ public class Engine : MonoBehaviour
 {
     [SerializeField] int[] speed;
     [SerializeField] float[] fuelUsagePerSec;
-    [SerializeField] float fuel;
-    [SerializeField] int powerLevel = 0;
+    [SerializeField] public float fuel;
+    [SerializeField] public int powerLevel = 0;
     [SerializeField] int engineTemperature;
     [SerializeField] float coolingIndex;
     Rigidbody2D tankRB;
