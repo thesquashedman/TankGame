@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     Engine engine;
     TankGun tg;
 
+    
+
     public Player(Player player)
     {
         fuel = player.fuel;
@@ -61,5 +63,9 @@ public class Player : MonoBehaviour
 
         //fuel = data.fuel;
         //cartridges = data.cartridges;
+    }
+    public void takeDamage(float damage)
+    {
+
     }
 }

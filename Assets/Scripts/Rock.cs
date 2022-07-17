@@ -13,6 +13,8 @@ public class Rock : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] float arcHeight;
+
+    [SerializeField] float damage;
     void Start()
     {
         startPosition = transform.position;
@@ -45,5 +47,17 @@ public class Rock : MonoBehaviour
     Quaternion LookAt2D(Vector2 forward)
     {
         return Quaternion.Euler(0,0,Mathf.Atan2(forward.y, forward.x) *Mathf.Rad2Deg);
+    }   
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("collide");
+        if(other.transform.GetComponent<Player>())
+        {
+            other.transform.GetComponent<Player>().takeDamage(damage);
+            Destroy(this.gameObject);
+        }
+        else if(other.tag == "Ground")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
