@@ -49,7 +49,7 @@ public class Rock : MonoBehaviour
         return Quaternion.Euler(0,0,Mathf.Atan2(forward.y, forward.x) *Mathf.Rad2Deg);
     }   
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("collide");
+        //Debug.Log("collide");
         if(other.transform.GetComponent<Player>())
         {
             other.transform.GetComponent<Player>().takeDamage(damage);

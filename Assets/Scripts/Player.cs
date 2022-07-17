@@ -6,6 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    [SerializeField] public Location curentLocation;
+
     public float speed;
     Rigidbody2D rb;
 
@@ -67,5 +69,10 @@ public class Player : MonoBehaviour
     public void takeDamage(float damage)
     {
 
+    }
+
+    public void changeLocation(Location newLocation)
+    {
+        curentLocation = newLocation;
     }
 }
