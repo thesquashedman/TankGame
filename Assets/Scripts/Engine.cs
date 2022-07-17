@@ -16,6 +16,8 @@ public class Engine : MonoBehaviour
     void Start()
     {
         tankRB = GetComponent<Rigidbody2D>();
+        Resource.OnPickup += pickupFuel;
+
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Engine : MonoBehaviour
     {
         Gas();
         ChangeEnginePower();
+        
     }
 
     void Gas()
@@ -50,5 +53,9 @@ public class Engine : MonoBehaviour
         {
             powerLevel = 2;
         }
+    }
+    void pickupFuel(float wood, float fuel, float metal)
+    {
+        this.fuel += fuel;
     }
 }
