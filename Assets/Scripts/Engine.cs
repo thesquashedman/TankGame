@@ -23,7 +23,8 @@ public class Engine : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Gas();
+        //Gas();
+        GasVelocity();
         ChangeEnginePower();
         
     }
@@ -35,6 +36,18 @@ public class Engine : MonoBehaviour
             if (fuel > 0)
             { 
                 tankRB.AddForce(new Vector2(speed[powerLevel], 0));
+                fuel -= fuelUsagePerSec[powerLevel] * Time.deltaTime;
+            }
+        }
+    }
+    void GasVelocity()
+    {
+        if (Input.GetKey(KeyCode.Space)) 
+        {
+            if (fuel > 0)
+            { 
+               
+                tankRB.velocity = Vector2.right * speed[powerLevel] * Time.deltaTime;
                 fuel -= fuelUsagePerSec[powerLevel] * Time.deltaTime;
             }
         }
