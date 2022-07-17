@@ -11,6 +11,8 @@ public class TankGun : MonoBehaviour
     [SerializeField] float reloadTime;
 
     [SerializeField] GameObject gunCartridgePref;
+
+    [SerializeField] float rotateSpeed;
     GameObject curCatridge;
 
     float timePassed;
@@ -32,6 +34,19 @@ public class TankGun : MonoBehaviour
         }
         timePassed += Time.deltaTime;
     }
+    void RotateGun()
+    {
+        
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+
+            this.transform.Rotate(-rotateSpeed * Time.deltaTime, 0, 0);
+        }
+        else if(Input.GetKey(KeyCode.DownArrow))
+        {
+            this.transform.Rotate(rotateSpeed * Time.deltaTime, 0, 0);
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -43,7 +58,9 @@ public class TankGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotateGun();
         Shoot();
+
     }
 
     private void FixedUpdate()
@@ -57,4 +74,5 @@ public class TankGun : MonoBehaviour
     {
         //Destroy(this.gameObject);
     }
+    
 }
