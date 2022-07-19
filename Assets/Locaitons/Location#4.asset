@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 263f8f0cf994c424ab9d177bba9b2817, type: 3}
-  m_Name: Location#3
+  m_Name: Location#4
   m_EditorClassIdentifier: 
-  locationName: Location#3
+  locationName: Location#4
   amountOfResurses: 0
   levelOfDanger: 0
   typeOfLoacation: 3
   conectionsWithOtheLocations:
-  - {fileID: 11400000, guid: 29aa9eb0b9fe70242ae87831bc6be0dc, type: 2}
-  - {fileID: 11400000, guid: 648acd106f0334142a8d8f1514ab893e, type: 2}
+  - {fileID: 11400000, guid: 7de82802df0d8744197ee022095f7003, type: 2}
+  - {fileID: 11400000, guid: ae16c1f4a2c66b846a5835e14a7df711, type: 2}

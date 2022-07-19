@@ -7,6 +7,7 @@ using System;
 
 
 [CreateAssetMenu(fileName = "New Location", menuName = "Locaiton")]
+[System.Serializable]
 public class Location : ScriptableObject
 {
     [SerializeField] public string locationName;
@@ -14,7 +15,8 @@ public class Location : ScriptableObject
     [SerializeField] float levelOfDanger;
     [SerializeField] int typeOfLoacation;
 
-    [SerializeField] public List<Location> conectionsWithOtheLocations;
+    [SerializeField] public List<KeyValuePair<Location, Road>> conectionsWithOtheLocations;
+    //[SerializeField] public List<Location> conectionsWithOtheLocations;
 
     //[SerializeField] public List<KeyValuePair<Location, int>> conectionsWithOtheLocations; //should be Location, Road>
 

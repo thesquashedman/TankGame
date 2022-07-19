@@ -25,7 +25,8 @@ public class GameSceneManager : MonoBehaviour
     {
         if (map.ConectedWithLocation(newLocaiton))
         {
-            player.curentLocation = newLocaiton;
+            player.curentLocationName = newLocaiton.locationName;
+            player.SavePlayer();
             SceneManager.LoadScene(newLocaiton.locationName);
             player.LoadPlayer();
         }

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4478391572763747097}
   - component: {fileID: 5032258971466034804}
   m_Layer: 0
-  m_Name: PlayerTank
+  m_Name: PlayerTank(ConstVelosity)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665c4b020fb987a458625cf9451e0ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0c0000001200000016000000
+  speed: 0a0000001200000016000000
   fuelUsagePerSec:
   - 1
   - 2

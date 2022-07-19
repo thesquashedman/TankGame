@@ -52,7 +52,7 @@ public class Rock : MonoBehaviour
         //Debug.Log("collide");
         if(other.transform.GetComponent<Player>())
         {
-            other.transform.GetComponent<Player>().takeDamage(damage);
+            other.GetComponent<Health>().ChangeHealth(-damage);
             Destroy(this.gameObject);
         }
         else if(other.tag == "Ground")

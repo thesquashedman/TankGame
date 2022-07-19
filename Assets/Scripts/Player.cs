@@ -6,16 +6,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] public Location curentLocation;
+    //[SerializeField] public Location curentLocation;
+
+    
 
     public float speed;
     Rigidbody2D rb;
 
     public float fuel;
     public int cartridges;
+    public float helth;
+    public string curentLocationName;
 
     Engine engine;
     TankGun tg;
+    Health plyHealth;
 
     
 
@@ -23,6 +28,8 @@ public class Player : MonoBehaviour
     {
         fuel = player.fuel;
         cartridges = player.cartridges;
+        helth = player.helth;
+        curentLocationName = player.curentLocationName;
     }
 
     // Start is called before the first frame update
@@ -31,6 +38,11 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         engine = GetComponent<Engine>();
         tg = GetComponentInChildren<TankGun>();
+        plyHealth = GetComponent<Health>();
+        if (curentLocationName != "Location#1")
+        {
+            this.LoadPlayer();
+        }
     }
 
 
@@ -38,6 +50,7 @@ public class Player : MonoBehaviour
     {
         fuel = engine.fuel;
         cartridges = tg.cartridges;
+        helth = plyHealth.GetHealth();
     }
 
     // Update is called once per frame
@@ -62,17 +75,16 @@ public class Player : MonoBehaviour
 
         engine.fuel = data.fuel;
         tg.cartridges = data.cartridges;
+        plyHealth.SetHealth(data.health);
+        curentLocationName = data.curentLocationName;
+        //this.curentLocation = data.curentLocation;
 
         //fuel = data.fuel;
         //cartridges = data.cartridges;
     }
-    public void takeDamage(float damage)
-    {
 
-    }
-
-    public void changeLocation(Location newLocation)
-    {
-        curentLocation = newLocation;
-    }
+    //public void changeLocation(Location newLocation)
+    //{
+    //    curentLocation = newLocation;
+    //}
 }

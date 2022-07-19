@@ -23,8 +23,8 @@ public class Engine : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Gas();
-        GasVelocity();
+        Gas();
+        //GasVelocity();
         ChangeEnginePower();
         
     }

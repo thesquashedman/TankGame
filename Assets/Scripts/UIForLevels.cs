@@ -8,21 +8,28 @@ public class UIForLevels : MonoBehaviour
 
     [SerializeField] GameObject fuel;
     [SerializeField] GameObject catridges;
+    [SerializeField] GameObject health;
+    [SerializeField] GameObject powerLevel;
 
-    Player player;
+    //Player player;
+
+    GameObject player;
 
 
     void Start()
     {
-        player = GameObject.Find("PlayerTank").GetComponent<Player>();
+        player = GameObject.Find("PlayerTank");
     }
 
     // Update is called once per frame
     void Update()
     {
-        fuel.GetComponent<Text>().text = "" + (int)player.fuel;
+        fuel.GetComponent<Text>().text = "" + (int)player.GetComponent<Player>().fuel;
 
-        catridges.GetComponent<Text>().text = "" + player.cartridges            ;
+        catridges.GetComponent<Text>().text = "" + player.GetComponent<Player>().cartridges;
 
+        health.GetComponent<Text>().text = "" + player.GetComponent<Player>().helth;
+
+        powerLevel.GetComponent<Text>().text = "" + (player.GetComponent<Engine>().powerLevel + 1);
     }
 }

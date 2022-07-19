@@ -6,7 +6,9 @@ public class Map : MonoBehaviour
 {
     Player player;
 
-    Location[] locations;
+    [SerializeField] Location[] locations;
+
+    Location playerCurentLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +25,19 @@ public class Map : MonoBehaviour
     public bool ConectedWithLocation(Location other)
     {
         //Debug.Log("#1");
-        for (int i = 0; i < player.curentLocation.conectionsWithOtheLocations.Count; i++)
+        for (int i = 0; i < locations.Length; i++)
+        {
+            if (player.curentLocationName == locations[i].locationName)
+            {
+                playerCurentLocation = locations[i];
+                break;
+            }
+        }
+
+        for (int i = 0; i < playerCurentLocation.conectionsWithOtheLocations.Count; i++)
         {
             //Debug.Log("#2");
-            if (player.curentLocation.conectionsWithOtheLocations[i].locationName == other.locationName)
+            if (playerCurentLocation.conectionsWithOtheLocations[i].Key.locationName == other.locationName)
             {
                 return true;
             }

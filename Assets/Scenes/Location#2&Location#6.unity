@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 188075560, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 841062969, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033915973, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401232023, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634289782, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 356876583999845400, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -580,10 +600,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f300649567bf99a4caf8720cac689fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curentLocation: {fileID: 0}
   speed: 0
   fuel: 0
   cartridges: 0
+  helth: 0
+  curentLocationName: 
 --- !u!1 &131987722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,33 +3450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncingFromTank: 250
---- !u!1 &1494009827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6084541060514154017, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
-  m_PrefabInstance: {fileID: 67634192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1494009831 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6084541060514154077, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
-  m_PrefabInstance: {fileID: 67634192}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1494009832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494009827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f3a7fc8d78b47408a108f3c313b666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuel: {fileID: 1508378298}
-  catridges: {fileID: 1033915972}
---- !u!1 &1508378298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6808997203655995618, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
   m_PrefabInstance: {fileID: 67634192}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529268980

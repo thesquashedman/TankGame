@@ -16,4 +16,6 @@ MonoBehaviour:
   amountOfResurses: 0
   levelOfDanger: 0
   typeOfLoacation: 2
-  conectionsWithOtheLocations: []
+  conectionsWithOtheLocations:
+  - {fileID: 11400000, guid: 29aa9eb0b9fe70242ae87831bc6be0dc, type: 2}
+  - {fileID: 11400000, guid: f2810fe7fb7eae44e805d896bfc72913, type: 2}

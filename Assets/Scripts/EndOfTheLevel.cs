@@ -28,19 +28,21 @@ public class EndOfTheLevel : MonoBehaviour
         Debug.Log("TirgerWasActivated");
         if (other.transform.GetComponent<Player>())
         {
+            player.SavePlayer();
             LoadMapScene();
         }
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            LoadMapScene();
-        }
-        Debug.Log("TirgerWasActivated");
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        player.SavePlayer();
+    //        LoadMapScene();
+    //    }
+    //    Debug.Log("TirgerWasActivated");
+    //}
 
 
 
