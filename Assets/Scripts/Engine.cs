@@ -47,7 +47,7 @@ public class Engine : MonoBehaviour
             if (fuel > 0)
             { 
                
-                tankRB.velocity = Vector2.right * speed[powerLevel] * Time.deltaTime;
+                tankRB.velocity = Vector2.right * speed[powerLevel] * Time.deltaTime; ///Time.FixedDeltaTime
                 fuel -= fuelUsagePerSec[powerLevel] * Time.deltaTime;
             }
         }

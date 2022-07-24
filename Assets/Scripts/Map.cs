@@ -37,7 +37,7 @@ public class Map : MonoBehaviour
         for (int i = 0; i < playerCurentLocation.conectionsWithOtheLocations.Count; i++)
         {
             //Debug.Log("#2");
-            if (playerCurentLocation.conectionsWithOtheLocations[i].Key.locationName == other.locationName)
+            if (playerCurentLocation.conectionsWithOtheLocations[i].locationName == other.locationName)
             {
                 return true;
             }
