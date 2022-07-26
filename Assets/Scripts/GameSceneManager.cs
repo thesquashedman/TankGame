@@ -13,6 +13,7 @@ public class GameSceneManager : MonoBehaviour
     {
         player = GameObject.Find("PlayerTank").GetComponent<Player>();
         map = GameObject.Find("Map").GetComponent<Map>();
+        player.LoadPlayer(); 
     }
 
     // Update is called once per frame
@@ -25,10 +26,11 @@ public class GameSceneManager : MonoBehaviour
     {
         if (map.ConectedWithLocation(newLocaiton))
         {
+            //player.LoadPlayer(); //??
             player.curentLocationName = newLocaiton.locationName;
-            player.SavePlayer();
+            player.SavePlayer();//??
             SceneManager.LoadScene(newLocaiton.locationName);
-            player.LoadPlayer();
+            //player.LoadPlayer();
         }
     }
 

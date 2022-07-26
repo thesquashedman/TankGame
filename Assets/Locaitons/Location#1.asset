@@ -19,3 +19,4 @@ MonoBehaviour:
   conectionsWithOtheLocations:
   - {fileID: 11400000, guid: cd991a95885369c4ea1e2b1a70332b3d, type: 2}
   - {fileID: 11400000, guid: 7de82802df0d8744197ee022095f7003, type: 2}
+  - {fileID: 11400000}

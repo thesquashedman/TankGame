@@ -11,8 +11,11 @@ public class Camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera = GetComponent<Camera>();
+        camera = GameObject.Find("PlayerTank").GetComponent<Camera>();
+        //GetComponent<Camera>();
+        playerTransform = GameObject.Find("PlayerTank").GetComponent<Transform>();
         cameraTransform = GetComponent<Transform>();
+        //cameraTransform = GameObject.Find("PlayerTank").GetComponent<Transform>();
     }
 
     // Update is called once per frame
