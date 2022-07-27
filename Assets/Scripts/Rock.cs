@@ -55,7 +55,7 @@ public class Rock : MonoBehaviour
             other.GetComponent<Health>().ChangeHealth(-damage);
             Destroy(this.gameObject);
         }
-        else if(other.tag == "Ground")
+        else //if(other.tag == "Ground")
         {
             Destroy(this.gameObject);
         }

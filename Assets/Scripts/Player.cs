@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public float fuel;
     public int cartridges;
     public float helth;
-    public string curentLocationName;
+    public string curentLocationName = "Location#1"; //!!!!
 
     Engine engine;
     TankGun tg;
@@ -30,11 +30,13 @@ public class Player : MonoBehaviour
         cartridges = player.cartridges;
         helth = player.helth;
         curentLocationName = player.curentLocationName;
+        //player.SavePlayer();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //this.SavePlayer();
         rb = GetComponent<Rigidbody2D>();
         engine = GetComponent<Engine>();
         tg = GetComponentInChildren<TankGun>();
@@ -43,6 +45,10 @@ public class Player : MonoBehaviour
         {
             this.LoadPlayer();
         }
+        //else
+        //{
+        //    this.SavePlayer();
+        //}
     }
 
 

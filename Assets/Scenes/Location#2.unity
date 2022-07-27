@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1033915972, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1634289783, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -145,6 +149,14 @@ PrefabInstance:
     - target: {fileID: 1634289783, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SavePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 167897794207188559, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696609531982603080, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6084541060514154017, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
       propertyPath: m_Name
@@ -234,7 +246,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3403002355656769829, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
+    - {fileID: 8439626035064843694, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c0bd02188e522a543b86f780dfe4a04d, type: 3}
 --- !u!1 &111732147
 GameObject:
