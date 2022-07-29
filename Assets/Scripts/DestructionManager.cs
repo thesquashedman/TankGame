@@ -8,6 +8,7 @@ public class DestructionManager : MonoBehaviour
     Health health;
     Rigidbody2D rb;
     Transform transform;
+    [SerializeField] float delayForDamage = 0;
 
     Player player;
 
@@ -44,15 +45,18 @@ public class DestructionManager : MonoBehaviour
 
             if (player.GetSpeed() > velocityForDamage[2])
             {
-                health.ChangeHealth(-health.GetHealth());
+                //health.ChangeHealth(-health.GetHealth());
+                StartCoroutine(WaitForDamage());
             }
             else if (player.GetSpeed() > velocityForDamage[1])
             {
-                health.ChangeHealth(-(health.GetHealth() * resistance / 2));
+                StartCoroutine(WaitForDamage());
+                //health.ChangeHealth(-(health.GetHealth() * resistance / 2));
             }
             else if (player.GetSpeed() > velocityForDamage[0])
             {
-                health.ChangeHealth(-(health.GetHealth() * resistance));
+                StartCoroutine(WaitForDamage());
+                //health.ChangeHealth(-(health.GetHealth() * resistance));
             }
             
         }
@@ -65,6 +69,12 @@ public class DestructionManager : MonoBehaviour
         }
         
         
+    }
+
+    IEnumerator WaitForDamage()
+    {
+        yield return new WaitForSeconds(delayForDamage);
+        health.ChangeHealth(-health.GetHealth());
     }
 
 }
