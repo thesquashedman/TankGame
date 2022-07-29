@@ -9,6 +9,7 @@ public class DestructionManager : MonoBehaviour
     Rigidbody2D rb;
     Transform transform;
     [SerializeField] float delayForDamage = 0;
+    [SerializeField] float minimumDamage = 1;
 
     Player player;
 
@@ -46,16 +47,31 @@ public class DestructionManager : MonoBehaviour
             if (player.GetSpeed() > velocityForDamage[2])
             {
                 //health.ChangeHealth(-health.GetHealth());
-                StartCoroutine(WaitForDamage());
+                StartCoroutine(WaitForDamage(-health.GetHealth()));
             }
             else if (player.GetSpeed() > velocityForDamage[1])
             {
-                StartCoroutine(WaitForDamage());
+                if (health.GetHealth() * resistance > minimumDamage)
+                {
+                    StartCoroutine(WaitForDamage(-health.GetHealth() * resistance));
+                }
+                else 
+                {
+                    StartCoroutine(WaitForDamage(-minimumDamage * 3));
+                }
                 //health.ChangeHealth(-(health.GetHealth() * resistance / 2));
             }
             else if (player.GetSpeed() > velocityForDamage[0])
             {
-                StartCoroutine(WaitForDamage());
+                if (-health.GetHealth() * resistance > minimumDamage)
+                {
+                    StartCoroutine(WaitForDamage(-health.GetHealth() * (resistance / 2)));
+                }
+                else
+                {
+                    StartCoroutine(WaitForDamage(-minimumDamage));
+                }
+                //StartCoroutine(WaitForDamage(-health.GetHealth() * resistance));
                 //health.ChangeHealth(-(health.GetHealth() * resistance));
             }
             
@@ -71,10 +87,10 @@ public class DestructionManager : MonoBehaviour
         
     }
 
-    IEnumerator WaitForDamage()
+    IEnumerator WaitForDamage(float damage)
     {
         yield return new WaitForSeconds(delayForDamage);
-        health.ChangeHealth(-health.GetHealth());
+        health.ChangeHealth(damage);
     }
 
 }

@@ -50,12 +50,12 @@ public class Rock : MonoBehaviour
     }   
     private void OnTriggerEnter2D(Collider2D other) {
         //Debug.Log("collide");
-        if(other.transform.GetComponent<Player>())
+        if(other.gameObject.tag == "Player") //other.transform.GetComponent<Player>()
         {
             other.GetComponent<Health>().ChangeHealth(-damage);
             Destroy(this.gameObject);
         }
-        else //if(other.tag == "Ground")
+        else if(other.tag != "Enemy")
         {
             Destroy(this.gameObject);
         }
