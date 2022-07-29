@@ -10,7 +10,7 @@ public class EndOfTheLevel : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("PlayerTank").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         sm = GameObject.Find("GameSceneManager").GetComponent<GameSceneManager>();
     }
 

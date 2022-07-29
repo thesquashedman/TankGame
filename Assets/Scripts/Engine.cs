@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Engine : MonoBehaviour
 {
-    [SerializeField] int[] speed;
-    [SerializeField] float[] fuelUsagePerSec;
+    [SerializeField] protected int[] speed;
+    [SerializeField] protected float[] fuelUsagePerSec;
     [SerializeField] public float fuel;
     [SerializeField] public int powerLevel = 0;
-    [SerializeField] int engineTemperature;
-    [SerializeField] float coolingIndex;
-    Rigidbody2D tankRB;
+    [SerializeField] protected int engineTemperature;
+    [SerializeField] protected float coolingIndex;
+    protected Rigidbody2D tankRB;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Engine : MonoBehaviour
         
     }
 
-    void Gas()
+    protected virtual void Gas()
     {
         if (Input.GetKey(KeyCode.Space)) 
         {

@@ -23,7 +23,7 @@ public class DestructionManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
 
-        player = GameObject.Find("PlayerTank").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         health.OnDeath += OnDying;
     }

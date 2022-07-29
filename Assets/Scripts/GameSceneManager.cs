@@ -12,7 +12,7 @@ public class GameSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("PlayerTank").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         //if (GameObject.Find("Map").GetComponent<Map>() != null)
         //{
         //    map = GameObject.Find("Map").GetComponent<Map>();

@@ -21,7 +21,7 @@ public class EnemyCloseAttack : MonoBehaviour
     {
         collider = GetComponent<Collider2D>();
         AttackTimer = 0;
-        player = GameObject.Find("PlayerTank");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

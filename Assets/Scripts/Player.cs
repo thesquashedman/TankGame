@@ -77,8 +77,14 @@ public class Player : MonoBehaviour
 
     public void LoadPlayer()
     {
+        Debug.Log("loading player");
         PlayerData data = SaveSystem.LoadPlayer();
 
+        Debug.Log(data.fuel);
+        if(engine == null)
+        {
+            Debug.Log("No engine");
+        }
         engine.fuel = data.fuel;
         tg.cartridges = data.cartridges;
         plyHealth.SetHealth(data.health);

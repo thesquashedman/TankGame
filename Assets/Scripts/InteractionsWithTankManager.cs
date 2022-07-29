@@ -16,7 +16,7 @@ public class InteractionsWithTankManager : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        player = GameObject.Find("PlayerTank");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
