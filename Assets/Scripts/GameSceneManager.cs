@@ -34,14 +34,21 @@ public class GameSceneManager : MonoBehaviour
     public void MoveToTheLocation(Location newLocaiton)
     {
         map = GameObject.Find("Map").GetComponent<Map>();
-        if (map.ConectedWithLocation(newLocaiton))
+        if (map.ConectedWithLocation(newLocaiton) != null)
         {
+            Road roadToMove = map.ConectedWithLocation(newLocaiton);
+
             //player.LoadPlayer(); //??
+            Location curentLoc;
+
             player.curentLocationName = newLocaiton.locationName;
             player.SavePlayer();//??
             //inMap = false;
-            SceneManager.LoadScene(newLocaiton.locationName);
-            //player.LoadPlayer();
+
+
+
+            //SceneManager.LoadScene(newLocaiton.locationName);
+            SceneManager.LoadScene(roadToMove.roadName);
         }
     }
 

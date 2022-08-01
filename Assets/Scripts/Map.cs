@@ -6,7 +6,7 @@ public class Map : MonoBehaviour
 {
     Player player;
 
-    [SerializeField] Location[] locations;
+    [SerializeField] public Location[] locations;
 
     Location playerCurentLocation;
 
@@ -22,7 +22,7 @@ public class Map : MonoBehaviour
         
     }
 
-    public bool ConectedWithLocation(Location other)
+    public Road ConectedWithLocation(Location other)
     {
         //Debug.Log("#1");
         for (int i = 0; i < locations.Length; i++)
@@ -39,9 +39,9 @@ public class Map : MonoBehaviour
             //Debug.Log("#2");
             if (playerCurentLocation.conectionsWithOtheLocations[i].locationName == other.locationName)
             {
-                return true;
+                return playerCurentLocation.roadsConectionsWithOtheLocations[i];
             }
         }
-        return false;
+        return null;
     }
 }
