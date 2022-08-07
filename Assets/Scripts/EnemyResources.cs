@@ -6,26 +6,26 @@ using UnityEngine;
 public class EnemyResources : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float wood;
+    [SerializeField] float cartridges;
     [SerializeField] float fuel;
 
-    [SerializeField] float metal;
+    [SerializeField] float health;
 
-    Health health;
+    Health enemyHealth;
  
     
     
     private void OnEnable() {
-        health = this.transform.GetComponent<Health>();
-        health.OnDeath += DropResources;
+        enemyHealth = this.transform.GetComponent<Health>();
+        enemyHealth.OnDeath += DropResources;
     }
     private void OnDisable() {
-        health.OnDeath -= DropResources;
+        enemyHealth.OnDeath -= DropResources;
     }
     void DropResources()
     {
         GameObject resource = Instantiate(Resources.Load("Prefabs/Resource"), this.transform.position, Quaternion.identity) as GameObject;
         
-        resource.GetComponent<Resource>().SetResources(wood, fuel, metal);
+        resource.GetComponent<Resource>().SetResources(cartridges, fuel, health);
     }
 }

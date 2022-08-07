@@ -5,17 +5,17 @@ using System;
 
 public class Resource : MonoBehaviour
 {
-    public float wood;
+    public float cartridges;
     public float fuel;
-    public float metal;
+    public float health;
 
     public static event Action<float, float, float> OnPickup;
 
-    public void SetResources(float wood, float fuel, float metal)
+    public void SetResources(float cartridges, float fuel, float health)
     {
-        this.wood = wood;
+        this.cartridges = cartridges;
         this.fuel = fuel;
-        this.metal = metal;
+        this.health = health;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +23,7 @@ public class Resource : MonoBehaviour
         {
             if(OnPickup != null)
             {
-                OnPickup.Invoke(wood, fuel, metal);
+                OnPickup.Invoke(cartridges, fuel, health);
             }
             
             Destroy(this.gameObject);
