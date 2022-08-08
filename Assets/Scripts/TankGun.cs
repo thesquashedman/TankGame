@@ -52,7 +52,7 @@ public class TankGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Resource.OnPickup += pickupCartridges;
     }
 
     // Update is called once per frame
@@ -73,6 +73,10 @@ public class TankGun : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Destroy(this.gameObject);
+    }
+    void pickupCartridges(float cartridges, float fuel, float health)
+    {
+        this.cartridges += (int)cartridges;
     }
     
 }

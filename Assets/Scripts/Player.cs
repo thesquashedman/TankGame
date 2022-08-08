@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
         engine = GetComponent<Engine>();
         tg = GetComponentInChildren<TankGun>();
         plyHealth = GetComponent<Health>();
+
+        Resource.OnPickup += pickupHealth;
         if (curentLocationName != "Location#1")
         {
             this.LoadPlayer();
@@ -95,6 +97,10 @@ public class Player : MonoBehaviour
 
         //fuel = data.fuel;
         //cartridges = data.cartridges;
+    }
+    void pickupHealth(float cartridges, float fuel, float health)
+    {
+        plyHealth.ChangeHealth(health);
     }
 
     //public void changeLocation(Location newLocation)

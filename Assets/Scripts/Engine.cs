@@ -67,7 +67,7 @@ public class Engine : MonoBehaviour
             powerLevel = 2;
         }
     }
-    void pickupFuel(float wood, float fuel, float metal)
+    void pickupFuel(float cartridges, float fuel, float health)
     {
         this.fuel += fuel;
     }
