@@ -39,7 +39,7 @@ public class Map : MonoBehaviour
             //Debug.Log("#2");
             if (playerCurentLocation.conectionsWithOtheLocations[i].locationName == other.locationName)
             {
-                return playerCurentLocation.roadsConectionsWithOtheLocations[i];
+                //return playerCurentLocation.roadsConectionsWithOtheLocations[i];
             }
         }
         return null;

@@ -22,7 +22,9 @@ public class Player : MonoBehaviour
     TankGun tg;
     Health plyHealth;
 
-    
+    public bool playerInWater = false;
+
+
 
     public Player(Player player)
     {

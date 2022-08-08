@@ -18,9 +18,9 @@ public class Location : ScriptableObject
     //[SerializeField] public List<KeyValuePair<Location, Road>> conectionsWithOtheLocations;
     [SerializeField] public List<Location> conectionsWithOtheLocations;
 
-    [SerializeField] public List<Road> roadsConectionsWithOtheLocations;
+    //[SerializeField] public List<Road> roadsConectionsWithOtheLocations;
 
-    //[SerializeField] public List<PairOfLocationAndRoad> conectionsWithOtheLocations;
+    [SerializeField] public List<PairOfLocationAndRoad> conectionsWithOtheLocationsAAA;
 
     //[SerializeField] public List<KeyValuePair<Location, int>> conectionsWithOtheLocations; //should be Location, Road>
 

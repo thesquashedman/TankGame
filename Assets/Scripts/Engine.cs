@@ -71,4 +71,12 @@ public class Engine : MonoBehaviour
     {
         this.fuel += fuel;
     }
+
+    public void ChangeAllSpeeds(int change)
+    {
+        for (int i = 0; i < speed.Length; i++)
+        {
+            speed[i] += change;
+        }
+    }
 }
