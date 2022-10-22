@@ -79,4 +79,11 @@ public class Engine : MonoBehaviour
             speed[i] += change;
         }
     }
+    public void SetAllSpeeds(int[] speeds)
+    {
+        for (int i = 0; i < speed.Length; i++)
+        {
+            speed[i] = speeds[i];
+        }
+    }
 }
