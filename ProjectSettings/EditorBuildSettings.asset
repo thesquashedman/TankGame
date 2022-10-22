@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Location#3.unity
     guid: fa9ac2d04e845fc4c9d0a75d25f49783
   - enabled: 1
-    path: Assets/Scenes/Road#2.unity
+    path: Assets/Scenes/2.unity
     guid: ea0ebc54e14387642990e14a3e208d89
   - enabled: 1
-    path: Assets/Scenes/Road#1.unity
+    path: Assets/Scenes/1.unity
     guid: 64935011f9e8e6141b5d0ba9d578b52f
   - enabled: 1
     path: Assets/Scenes/Location#4.unity
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Location#6.unity
     guid: c2b0d04ec52ee824fb87831b6ab437d9
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: af1fc62c8327b3249b931f929a036b4d
   m_configObjects: {}

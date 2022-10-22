@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 284747234}
   - component: {fileID: 284747235}
   - component: {fileID: 284747236}
+  - component: {fileID: 284747237}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -478,7 +479,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284747233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85131c977111b7d4081fa223ed87d1eb, type: 3}
   m_Name: 
@@ -491,6 +492,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae16c1f4a2c66b846a5835e14a7df711, type: 2}
   - {fileID: 11400000, guid: f2810fe7fb7eae44e805d896bfc72913, type: 2}
   - {fileID: 11400000, guid: b83a085fb9bea3e409edae5cc0df3edf, type: 2}
+--- !u!114 &284747237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284747233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e049b8bcd0a5fa4e8ae61baf7017e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 454957847}
 --- !u!1 &329869049
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +923,8 @@ MonoBehaviour:
   cartridges: 0
   helth: 0
   curentLocationName: Location#1
+  curentLocationIndex: 0
+  playerInWater: 0
 --- !u!114 &454957848
 MonoBehaviour:
   m_ObjectHideFlags: 0

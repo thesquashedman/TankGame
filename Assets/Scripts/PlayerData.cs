@@ -10,6 +10,7 @@ public class PlayerData
     public int cartridges;
     public float health;
     public string curentLocationName;
+    public int curentLocationIndex;
 
     public PlayerData(Player player)
     {
@@ -17,6 +18,7 @@ public class PlayerData
         cartridges = player.cartridges;
         health = player.helth;
         curentLocationName = player.curentLocationName;
+        curentLocationIndex = player.curentLocationIndex;
         //curentLocation = player.curentLocation;
     }
 }

@@ -26,7 +26,7 @@ public class ExplosionBlock : Explosive
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Colision");
+        //Debug.Log("Colision");
         if (rigidbody.velocity.magnitude > activationsForce)
         {
             this.Explode();

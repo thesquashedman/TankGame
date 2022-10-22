@@ -18,11 +18,11 @@ public class GameSceneManager : MonoBehaviour
         //    map = GameObject.Find("Map").GetComponent<Map>();
         //}
         //map = GameObject.Find("Map").GetComponent<Map>();
-        if (player.curentLocationName != "Location#1") //&& inMap != false
+        if (player.curentLocationName != "1") //&& inMap != false
         {
             player.LoadPlayer();
         }
-        player.LoadPlayer();  //!!!!!!!!!!!!!!!!!
+        //player.LoadPlayer();  //!!!!!!!!!!!!!!!!!
     }
 
     // Update is called once per frame

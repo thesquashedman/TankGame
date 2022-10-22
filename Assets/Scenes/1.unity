@@ -458,6 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionForceMulti: 400
   ExplosionRadius: 1
+  activationsForce: 100
 --- !u!114 &42855691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24094,7 +24095,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1675873325}
   - component: {fileID: 1675873324}
-  - component: {fileID: 1675873323}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -24102,19 +24102,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1675873323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675873322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85131c977111b7d4081fa223ed87d1eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations: []
 --- !u!212 &1675873324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26911,9 +26898,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1848541702}
-  - component: {fileID: 1848541701}
   - component: {fileID: 1848541700}
   - component: {fileID: 1848541703}
+  - component: {fileID: 1848541704}
   m_Layer: 0
   m_Name: EndlOfTheLevel
   m_TagString: Untagged
@@ -26937,18 +26924,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1848541701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848541699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b5e1ff76ac86545976c19356494dde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1848541702
 Transform:
   m_ObjectHideFlags: 0
@@ -26957,7 +26932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848541699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.27, y: 7.91, z: -4.31}
+  m_LocalPosition: {x: 98.2, y: 8, z: -4.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27014,6 +26989,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1848541704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848541699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e049b8bcd0a5fa4e8ae61baf7017e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 111732154}
 --- !u!1 &1848746375
 GameObject:
   m_ObjectHideFlags: 0
@@ -31850,6 +31838,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048469817}
     m_Modifications:
+    - target: {fileID: 3486648250173073424, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7509861424351587937, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
       propertyPath: m_Name
       value: PlayerTank
@@ -31860,11 +31852,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7509861424351587941, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.9
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7509861424351587941, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: 5.62
       objectReference: {fileID: 0}
     - target: {fileID: 7509861424351587941, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31897,6 +31889,18 @@ PrefabInstance:
     - target: {fileID: 7509861424351587941, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509861424351587944, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
+      propertyPath: cartridges
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509861424351587944, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
+      propertyPath: curentLocationName
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509861424351587944, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}
+      propertyPath: curentLocationIndex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94ab080432bf894999ef6e14aa2ec30, type: 3}

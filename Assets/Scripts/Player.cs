@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //[System.Serializable]
 public class Player : MonoBehaviour
@@ -16,9 +17,10 @@ public class Player : MonoBehaviour
     public float fuel;
     public int cartridges;
     public float helth;
-    public string curentLocationName = "Location#1"; //!!!!
+    public string curentLocationName = "1"; //!!!!
+    public int curentLocationIndex = 1;
 
-    Engine engine;
+    public Engine engine;
     TankGun tg;
     Health plyHealth;
 
@@ -31,7 +33,11 @@ public class Player : MonoBehaviour
         fuel = player.fuel;
         cartridges = player.cartridges;
         helth = player.helth;
-        curentLocationName = player.curentLocationName;
+        //curentLocationName = player.curentLocationName;
+
+        curentLocationName = player.curentLocationName;//SceneManager.GetActiveScene().name;
+
+        curentLocationIndex = player.curentLocationIndex;
         //player.SavePlayer();
     }
 
@@ -45,9 +51,20 @@ public class Player : MonoBehaviour
         plyHealth = GetComponent<Health>();
 
         Resource.OnPickup += pickupHealth;
-        if (curentLocationName != "Location#1")
+
+
+
+        if (SceneManager.GetActiveScene().name != "1")
         {
             this.LoadPlayer();
+        }
+        else 
+        {
+            Debug.Log(SceneManager.GetActiveScene().name);
+            curentLocationName = SceneManager.GetActiveScene().name;
+
+            curentLocationIndex = 1; //int.Parse(SceneManager.GetActiveScene().name);
+            Debug.Log("ABCABCABC");
         }
         //else
         //{
@@ -93,6 +110,7 @@ public class Player : MonoBehaviour
         tg.cartridges = data.cartridges;
         plyHealth.SetHealth(data.health);
         curentLocationName = data.curentLocationName;
+        curentLocationIndex = data.curentLocationIndex;
         //this.curentLocation = data.curentLocation;
 
         //fuel = data.fuel;
