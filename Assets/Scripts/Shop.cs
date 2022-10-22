@@ -16,7 +16,7 @@ public class Shop : MonoBehaviour
     }
     void UpgradeGun()
     {
-        player.upgradeGun();
+        //player.upgradeGun();
         gunProgress.fillAmount += .25f;
     }
 
