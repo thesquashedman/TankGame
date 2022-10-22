@@ -15,6 +15,8 @@ public class TankGun : MonoBehaviour
     [SerializeField] float rotateSpeed;
     GameObject curCatridge;
 
+    public float damage;
+
     float timePassed;
     //DamageManager damMang;
 
@@ -27,6 +29,7 @@ public class TankGun : MonoBehaviour
             {
                 curCatridge = Instantiate(gunCartridgePref, new Vector3(placeToSpawnCatridge.position.x, placeToSpawnCatridge.position.y, placeToSpawnCatridge.position.z), Quaternion.identity);
                 curCatridge.GetComponent<Rigidbody2D>().AddForce(this.transform.forward * catridgeSpeed);
+                curCatridge.GetComponent<DamageManager>().damage = damage;
                 cartridges--;
                 timePassed = 0;
             }

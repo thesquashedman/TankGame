@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
 
     public bool playerInWater = false;
 
+    public int gunUpgradeLevel;
+
 
 
     public Player(Player player)
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
         {
             this.LoadPlayer();
         }
+        gunUpgradeLevel = 0;
         //else
         //{
         //    this.SavePlayer();
@@ -93,6 +96,7 @@ public class Player : MonoBehaviour
         tg.cartridges = data.cartridges;
         plyHealth.SetHealth(data.health);
         curentLocationName = data.curentLocationName;
+        SetGunDamage(25);
         //this.curentLocation = data.curentLocation;
 
         //fuel = data.fuel;
@@ -101,6 +105,23 @@ public class Player : MonoBehaviour
     void pickupHealth(float cartridges, float fuel, float health)
     {
         plyHealth.ChangeHealth(health);
+    }
+    public void SetGunDamage(float damage)
+    {
+        tg.damage = damage;
+    }
+    public void SetEngineSpeeds(int[] speed)
+    {
+        engine.SetAllSpeeds(speed);
+    }
+    public void GainHealth(float health)
+    {
+        plyHealth.ChangeHealth(health);
+    }
+    public void upgradeGun()
+    {
+        SetGunDamage(tg.damage + 25);
+        gunUpgradeLevel++;
     }
 
     //public void changeLocation(Location newLocation)
